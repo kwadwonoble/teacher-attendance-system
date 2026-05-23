@@ -2,7 +2,7 @@ import axios from "axios";
 
 const API = axios.create({
 
-  baseURL: "http://localhost:5000/api",
+  baseURL: "https://teacher-attendance-system-1-qgf0.onrender.com/api",
 
   timeout: 10000,
 
