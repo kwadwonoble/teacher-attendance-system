@@ -31,8 +31,30 @@ router.post("/", async (req, res) => {
 
   try {
 
+    console.log(req.body);
+
     const teacher =
-      new Teacher(req.body);
+      new Teacher({
+
+        firstName:
+          req.body.firstName,
+
+        lastName:
+          req.body.lastName,
+
+        subject:
+          req.body.subject,
+
+        jhsSubject:
+          req.body.jhsSubject || "",
+
+        phone:
+          req.body.phone,
+
+        town:
+          req.body.town,
+
+      });
 
     const savedTeacher =
       await teacher.save();
@@ -46,8 +68,13 @@ router.post("/", async (req, res) => {
     console.log(error);
 
     res.status(500).json({
+
       message:
         "Failed to add teacher",
+
+      error:
+        error.message,
+
     });
 
   }
