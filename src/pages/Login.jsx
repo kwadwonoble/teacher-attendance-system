@@ -97,6 +97,20 @@ function Login() {
               placeholder="Enter password"
             />
 
+
+            <div className="text-right mb-4">
+
+              <Link
+                to="/forgot-password"
+                className="text-blue-600"
+              >
+
+                Forgot Password?
+
+              </Link>
+
+            </div>
+
           </div>
 
           <button
@@ -107,17 +121,7 @@ function Login() {
 
         </form>
 
-        <div className="mt-6 bg-blue-50 p-4 rounded-lg text-sm">
-
-          <p className="font-semibold mb-2">
-            Demo Login
-          </p>
-
-          <p>Email: admin@gmail.com</p>
-
-          <p>Password: 123456</p>
-
-        </div>
+       
 
       </div>
 

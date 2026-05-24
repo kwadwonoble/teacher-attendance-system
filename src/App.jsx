@@ -11,6 +11,7 @@ import NotFound from "./pages/NotFound";
 import EditTeacher from "./pages/EditTeacher";
 import ProtectedRoute from "./components/ProtectedRoute";
 import AbsenceAnalytics from "./pages/AbsenceAnalytics";
+import ForgotPassword from "./pages/ForgotPassword";
 
 function App() {
   return (
@@ -97,6 +98,12 @@ function App() {
               path="/absence-analytics"
               element={<AbsenceAnalytics />}
             />
+
+
+            <Route
+              path="/forgot-password"
+              element={<ForgotPassword />}
+              />
 
 
 

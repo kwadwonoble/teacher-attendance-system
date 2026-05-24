@@ -3,36 +3,37 @@ const express = require("express");
 const router = express.Router();
 
 const {
-  saveAttendance,
-  getAttendance,
-  getAttendanceByDate,
-  generateAttendancePDF,
-  getDashboardStats,
-  getMonthlyAbsentees,
-} = require("../controllers/attendanceController");
 
-// SAVE
-router.post("/", saveAttendance);
+  register,
 
-// GET ALL
-router.get("/", getAttendance);
+  login,
 
-// PDF FIRST
-router.get("/pdf/:date", generateAttendancePDF);
+  forgotPassword,
 
+  resetPassword,
 
-router.get(
-  "/dashboard/stats",
-  getDashboardStats
+} = require("../controllers/authController");
+
+// ROUTES
+
+router.post(
+  "/register",
+  register
 );
 
-
-router.get(
-  "/analytics/absences/:month",
-  getMonthlyAbsentees
+router.post(
+  "/login",
+  login
 );
 
-// DATE AFTER
-router.get("/:date", getAttendanceByDate);
+router.post(
+  "/forgot-password",
+  forgotPassword
+);
+
+router.post(
+  "/reset-password/:token",
+  resetPassword
+);
 
 module.exports = router;
