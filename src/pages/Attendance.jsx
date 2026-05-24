@@ -46,7 +46,6 @@ function Attendance() {
 
     }));
 
-    // SAVE TIME WHEN PRESENT
     setTimeRecords((prev) => ({
 
       ...prev,
@@ -115,7 +114,7 @@ function Attendance() {
       new Date().toISOString().split("T")[0];
 
     window.open(
-      `http://localhost:5000/api/attendance/pdf/${today}`,
+      `https://teacher-attendance-system-1-qgf0.onrender.com/api/attendance/pdf/${today}`,
       "_blank"
     );
   };
@@ -176,13 +175,9 @@ function Attendance() {
                 </td>
 
                 <td className="p-3">
-                    {teacher.subject === "JHS"
-                        ? `JHS (${teacher.jhsSubject})`
-                        : teacher.subject}
-                    
-
-                  
-
+                  {teacher.subject === "JHS"
+                    ? `JHS (${teacher.jhsSubject})`
+                    : teacher.subject}
                 </td>
 
                 <td className="p-3">
@@ -202,7 +197,6 @@ function Attendance() {
 
                 </td>
 
-                {/* LIVE STATUS */}
                 <td className="p-3">
 
                   {attendance[teacher._id]
@@ -211,7 +205,6 @@ function Attendance() {
 
                 </td>
 
-                {/* LIVE TIME */}
                 <td className="p-3">
 
                   {attendance[teacher._id]
@@ -255,6 +248,5 @@ function Attendance() {
 }
 
 export default Attendance;
-
 
                 

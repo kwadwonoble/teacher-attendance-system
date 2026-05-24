@@ -9,7 +9,6 @@ function AttendanceHistory() {
 
   const [selectedDate, setSelectedDate] = useState("");
 
-  // LOAD ALL
   useEffect(() => {
     loadAttendance();
   }, []);
@@ -32,7 +31,6 @@ function AttendanceHistory() {
     }
   };
 
-  // FILTER BY DATE
   const filteredAttendance =
     selectedDate
       ? attendanceData.filter(
@@ -44,7 +42,7 @@ function AttendanceHistory() {
   const downloadPDF = (date) => {
 
     window.open(
-      `http://localhost:5000/api/attendance/pdf/${date}`,
+      `https://teacher-attendance-system-1-qgf0.onrender.com/api/attendance/pdf/${date}`,
       "_blank"
     );
   };
@@ -60,7 +58,6 @@ function AttendanceHistory() {
             Attendance History
           </h1>
 
-          {/* DATE PICKER */}
           <input
             type="date"
             value={selectedDate}
