@@ -27,7 +27,7 @@ app.use(limiter);
 
 app.use(cors({
 
-  origin: "http://localhost:5173",
+  origin: "https://teacher-attendance-system-three.vercel.app",
 
 })); 
 app.use(express.json());
